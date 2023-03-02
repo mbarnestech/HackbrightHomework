@@ -1,5 +1,7 @@
+# Cost of one melon
 melon_cost = 1.00
 
+# Provided information about 6 customers
 customer1_name = "Joe"
 customer1_melons = 5
 customer1_paid = 5.00
@@ -24,6 +26,7 @@ customer6_name = "Ashley"
 customer6_melons = 3
 customer6_paid = 2.00
 
+# provided way to create readable info about each customer's order
 customer1_expected = customer1_melons * melon_cost
 if customer1_expected != customer1_paid:
     print(f"{customer1_name} paid ${customer1_paid:.2f},",
