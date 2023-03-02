@@ -2,6 +2,7 @@
 
 # define function
 def generate_produce_report(day):
+    """ print report based off .txt file for a given day """
 
     # print day number
     print(f"Day {day}")
