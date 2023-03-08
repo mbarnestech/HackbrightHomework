@@ -1,0 +1,2 @@
+salesreport.py - provided file; assignment is to add comments and think about improvements. I added comments but did not alter code.
+salesreport2.py - created file to demonstrate a better version of salesreport.py using dictionaries
