@@ -1,6 +1,5 @@
 """Customer class definition"""
 
-
 class Customer:
     """A customer at Ubermelon."""
 
