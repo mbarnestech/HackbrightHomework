@@ -2,37 +2,42 @@
 
 import robots
 
+class Cucurbit:
+    """Cucurbit superclass. """
+    color = None
+    stickers = []
+    weight = 0.0
 
-class Melon:
-    """Melon."""
+    def __init__(self, cucurbit_type):
+        """Initialize cucurbit.
 
-    def __init__(self, melon_type):
-        """Initialize melon.
-
-        melon_type: type of melon being built.
+        cucurbit_type: type of cucurbit being built.
         """
-
-        self.melon_type = melon_type
-        self.weight = 0.0
-        self.color = None
-        self.stickers = []
+        self.melon_type = cucurbit_type
 
     def prep(self):
-        """Prepare the melon."""
+        """Prepare the cucurbit."""
 
         robots.cleanerbot.clean(self)
         robots.stickerbot.apply_logo(self)
 
     def __str__(self):
-        """Print out information about melon."""
+        """Print out information about cucurbit."""
 
         if self.weight <= 0:
             return self.melon_type
         else:
             return f"{self.color} {self.weight:.2f} lbs {self.melon_type}"
+        
+class Melon(Cucurbit):
+    """Melon Subclass."""
 
 
-class Squash(Melon):
-    """Winter squash."""
+class Squash(Cucurbit):
+    """Winter squash Subclass."""
 
-    # FIX ME: Add Squash class definition here.
+    def prep(self):
+        """Prepare the cucurbit."""
+
+        super().prep()
+        robots.painterbot.paint(self)
