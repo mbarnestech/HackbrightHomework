@@ -42,7 +42,7 @@ def without_duplicates(words):
         <class 'list'>
     """
 
-    return []
+    return list(set(words))
 
 
 def find_unique_common_items(items1, items2):
@@ -78,7 +78,7 @@ def find_unique_common_items(items1, items2):
         [2]
     """
 
-    return set()
+    return set(items1) & set(items2)
 
 
 def get_sum_zero_pairs(numbers):
@@ -108,7 +108,44 @@ def get_sum_zero_pairs(numbers):
         [[-1, 1], [0, 0]]
     """
 
-    return []
+    # solution with pairs as a list
+
+    # pairs = []
+
+    # for i in range(len(numbers)):
+    #     if i == len(numbers) and numbers[i] != 0:
+    #         break
+    #     new = True
+    #     for pair in pairs:
+    #         if abs(numbers[i]) == abs(pair[0]):
+    #             new = False
+    #             continue
+    #     if new:
+    #         for j in range(i, len(numbers)):
+    #             if numbers[i] + numbers[j] == 0:
+    #                 pairs.append([numbers[i], numbers[j]])
+
+        
+    # return pairs
+
+
+    # solution with pairs as a dictionary
+     
+    pairs = {}
+
+    for i in range(len(numbers)):
+        if i == len(numbers) and numbers[i] != 0:
+            break
+        if pairs.get(abs(numbers[i])):
+            continue
+        if numbers[i] == 0:
+            pairs[0] = 0
+            continue
+        for j in range(i, len(numbers)):
+            if numbers[i] + numbers[j] == 0:
+                pairs[abs(numbers[i])] = -abs(numbers[i])
+
+    return [[key, value] for key, value in pairs.items()]
 
 
 def top_chars(phrase):
@@ -135,8 +172,31 @@ def top_chars(phrase):
     Do not count spaces, but count all other characters.
 
     """
+    chars = {}
 
-    return []
+    for char in phrase:
+        chars[char.lower()] = chars.get(char.lower(), 0) + 1
+
+    top = ['',0]
+    second = ['',0]
+    
+    for char, num in chars.items():
+        
+        if char == ' ':
+            continue
+
+        if num > top[1]:
+            second = top
+            top = [char, num]
+
+        elif num > second[1]:
+            second = [char, num]
+
+    if top[1] == second[1]:
+
+        return [top[0], second[0]]
+    
+    return [top[0]]
 
 #####################################################################
 # You can ignore everything below this.
