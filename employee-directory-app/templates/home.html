@@ -1,11 +1,8 @@
-<html>
-<head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <link rel="stylesheet" href="/static/css/cover.css">
-  <title>Ubermelon. Melons when you want them.</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %} Ubermelon. Melons when you want them. {% endblock %}
+
+{% block content %}
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
       <div class="cover-container">
@@ -44,5 +41,4 @@
       </div>
     </div>
   </div>
-</body>
-</html>
+{% endblock %}
