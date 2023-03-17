@@ -2,13 +2,24 @@
 
 {% block content %}
 
-<p>#3) Fix this form so it submits to the route /results.</p>
+<h3>What kind of message would you like?</h3>
+<form action="/results">
+  <fieldset>
+    <legend>What sort of message would you like?</legend>
+    
+    {% for state in moods %}
+      <label>
+        {{ state }}
+        <input type="checkbox" name='mood' value='{{ state }}'>
+      </label>
+    {% endfor %}
 
-<p>What kind of message would you like?</p>
-<form>
-  <input type="checkbox" value="cheery"> Cheery<br>
-  <input type="checkbox" value="honest"> Honest<br>
-  <input type="checkbox" value="dreary"> Dreary<br>
+  </fieldset>
+
+  <fieldset>
+    <legend>Submit</legend>
+    <input type="submit">
+  </fieldset>
 </form>
 
 {% endblock %}
