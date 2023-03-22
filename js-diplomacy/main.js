@@ -24,3 +24,29 @@ colorChangerButton.addEventListener('click', () => {
     // to say ‘Please enter a smaller number’. Otherwise, change the text of that 
     // element to say “You are good to go!.”"
 
+// create function to check number
+function checkNumber(){
+
+    // get number input element
+    const numberInput = document.querySelector('#number-input').value;
+
+    // get location of feedback text
+    const feedbackText = document.querySelector('#formFeedback')
+    // check number
+    if (isNaN(numberInput) || numberInput >= 10){
+        feedbackText.innerHTML = 'Please enter a smaller number' 
+    } else {
+        feedbackText.innerHTML = 'You are good to go!'
+    }
+}
+
+// get submit input element
+const submit = document.querySelector('input[type="submit"]');
+
+// create event listener for submit element
+submit.addEventListener('click', (evt) => {
+    // prevent default behavior
+    evt.preventDefault();
+    // then run the checkNumber function
+    checkNumber();
+  });
