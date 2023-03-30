@@ -1,3 +1,5 @@
+# Nothing added to this file; homework exercise was entirely in CLI.
+
 """Models and database functions for Ratings project."""
 
 from flask_sqlalchemy import SQLAlchemy
