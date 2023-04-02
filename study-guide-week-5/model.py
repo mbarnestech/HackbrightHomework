@@ -23,6 +23,9 @@ class Brand(db.Model):
     headquarters = db.Column(db.String(50))
     discontinued = db.Column(db.Integer)
 
+    def __repr__(self):
+        return f'<{self.brand_id=}, {self.name=}>'
+
 
 class Model(db.Model):
     """Car model."""
@@ -34,6 +37,22 @@ class Model(db.Model):
     brand_id = db.Column(db.String(5), db.ForeignKey(Brand.brand_id), nullable = False)
     name = db.Column(db.String(50), nullable = False)
 
+    def __repr__(self):
+        return f'<{self.model_id=}, {self.name=}>'
+
+class Award(db.Model):
+    """Award model"""
+
+    __tablename__ = "awards"
+
+    award_id = db.Column(db.Integer, primary_key = True)
+    year = db.Column(db.Integer, nullable = False)
+    winner_id = db.Column(db.Integer, db.ForeignKey(Model.model_id))
+    name = db.Column(db.String(50), nullable = False)
+
+    def __repr__(self):
+        return f'<{self.award_id=}, {self.name=}>'
+    
 # End Part 1
 
 
