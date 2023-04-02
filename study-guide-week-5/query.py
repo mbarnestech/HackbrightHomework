@@ -15,6 +15,39 @@ from model import *
 
 init_app()
 
+def get_ram():
+    """Get the brand with the brand_id of ram"""
+    return Brand.query.filter_by(brand_id='ram').one()
+
+def get_Corvette_che():
+    """Get all models with the name Corvette and the brand_id che"""
+    return Model.query.filter_by(name='Corvette', brand_id='che').all()
+
+def get_old_models():
+    """Get all models that are older than 1960"""
+    return Model.query.filter(Model.year < 1960).all()
+
+def get_recently_founded():
+    """Get all brands that were founded after 1920"""
+    return Brand.query.filter(Brand.founded > 1920).all()
+
+def get_cor():
+    """Get all models with names that begin with Cor."""
+    return Model.query.filter(Model.name.like('Cor%')).all()
+
+def get_extant_1903():
+    """Get all brands that were founded in 1903 and that are not yet discontinued."""
+    return Brand.query.filter(Brand.founded == 1903, Brand.discontinued.is_(None)).all()
+
+def get_discontinued_or_pre_1950():
+    """Get all brands that are either 1) discontinued (at any time) or 2) founded before 1950."""
+    return Brand.query.filter((Brand.discontinued.isnot(None)) | (Brand.founded < 1950)).all()
+
+
+def get_not_for():
+    """Get all models whose brand_id is not for."""
+    return Model.query.filter(Model.brand_id != 'for').all()
+
 
 # -------------------------------------------------------------------
 # Part 2: Discussion Questions
