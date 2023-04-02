@@ -12,20 +12,27 @@ db = SQLAlchemy()
 ##############################################################################
 # Part 1: Compose ORM
 
-# class Brand(db.Model):
-#     """Car brand."""
+class Brand(db.Model):
+    """Car brand."""
 
-#     __tablename__ = "brands"
+    __tablename__ = "brands"
 
-#     pass
+    brand_id = db.Column(db.String(5), primary_key = True)
+    name = db.Column(db.String(50), nullable = False)
+    founded = db.Column(db.Integer)
+    headquarters = db.Column(db.String(50))
+    discontinued = db.Column(db.Integer)
 
 
-# class Model(db.Model):
-#     """Car model."""
+class Model(db.Model):
+    """Car model."""
 
-#     __tablename__ = "models"
+    __tablename__ = "models"
 
-#     pass
+    model_id = db.Column(db.Integer, primary_key = True)
+    year = db.Column(db.Integer, nullable = False)
+    brand_id = db.Column(db.String(5), db.ForeignKey(Brand.brand_id), nullable = False)
+    name = db.Column(db.String(50), nullable = False)
 
 # End Part 1
 
