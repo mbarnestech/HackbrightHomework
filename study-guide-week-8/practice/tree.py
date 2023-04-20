@@ -25,9 +25,7 @@ class Node:
             2
         """
 
-        # FIXME
-
-        pass
+        return len(self.children)
 
 
 class Tree:
@@ -91,8 +89,16 @@ class Tree:
 
         """
 
-        # FIXME
-        pass
+        to_visit = [self]
+
+        while to_visit:
+            current = to_visit.pop(0)
+
+            if current.data == data:
+                return current
+            
+            to_visit.extend[current.children]
+
 
 
 if __name__ == "__main__":
