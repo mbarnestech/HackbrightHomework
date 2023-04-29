@@ -1,0 +1,21 @@
+Recursion
+1. In your own words, what is recursion?
+
+2. Why is it necessary to have a base case?
+
+Graphs
+1. What is a graph?
+
+2. Give an example of something that would be good to model with a graph.
+
+Data Structures
+
+- fill in missing; not going to recreate charts here.
+
+Sorting
+1. Describe in words how the Bubble Sort algorithm works.
+
+2. Describe in words how the Merge Sort algorithm works.
+
+3. Describe in words how the Quick Sort algorithm works.
+
