@@ -1,21 +1,68 @@
 Recursion
 1. In your own words, what is recursion?
 
+Calling a function within itself.
+
 2. Why is it necessary to have a base case?
+
+a base case provides a scenario in which the recursion must end - so the base case stops the recursion. 
+if there were no base case, recursion would continue forever.
 
 Graphs
 1. What is a graph?
+a graph is a tree that contains loops.
 
 2. Give an example of something that would be good to model with a graph.
+instant runoff voting.
 
-Data Structures
+Data Structures (LL -> Linked List)
 
-- fill in missing; not going to recreate charts here.
+
+Data Structure  Index   Search  Add-R   Add-L   Pop-L   Pop-R
+Python List     O(1)    O(n)    O(1)    O(n)    O(n)    O(1)
+Singly LL       O(n)    O(n)    O(1)    O(1)    O(1)    O(n)
+Doubly LL       O(n)    O(n)    O(1)    O(1)    O(1)    O(1)
+Queue (List)    X       X       O(1)    X       O(n)    X
+Queue (SLL/DLL) X       X       O(1)    X       O(n)    X
+Stack (List)    X       X       O(1)    X       X       O(1)
+Stack (SLL/DLL) X       X       O(1)    X       X       O(n)(S)/O(1)(D)
+Deque (DLL)     X       X       O(1)    O(1)    O(1)    O(1)
+
+Data Structure      Get     Add     Delete  Iterate     Memory
+Dict (Hash Map)     O(1)    O(1)    O(1)    O(n)        medium
+Set (Hash Map)      O(1)    O(1)    O(1)    O(n)        medium
+Binary Search tree  O(logN) O(1)    O(logN) O(logN)
+tree                O(n)    O()    
+
+
+
 
 Sorting
 1. Describe in words how the Bubble Sort algorithm works.
+You have a list of items, length n.
+For each item from 0 to n-1, starting at 0, compare item at index i with item at index i + 1. 
+If the item at i is more than the item at i + 1, swap the items.
+After the first round, item n will be sorted. Do a second round of 0 to n-2, and do this n-1 times (until all items have been sorted).
 
 2. Describe in words how the Merge Sort algorithm works.
+We have two arrays, lst1 and lst2. They are already sorted (we'll say lowest to highest).
+Create an empty lst3.
+Compare items at index 0. pop the lower value item and append to lst3.
+Compare items at index 0 again; again pop the lower value item and append to lst3.
+Repeat until one of lst1 or lst2 is empty. add remaining items from non-empty list to lst3.
+
+If you don't know you have a sorted lst1 and lst2, take your initial list or lists and 
+break them into halves until there is only item in each list, then run merge sort on two of these one item lists at a time,
+then on the two-item lists created, and so on until there is one reconstituted list left.
+
 
 3. Describe in words how the Quick Sort algorithm works.
+Pick a random pivot in list.
+Iterate through list 
+    - if item is higher than pivot, swap places as necessary with pivot so item is in higher index than pivot.
+    - if item is lower than pivot, swap places as necessary with pivot so item is in lower index than pivot.
+After going through entire list, assign new pivot for sections above and below pivot, then iterate through them as described above.
+Continue until all items have been a pivot.
+
+
 

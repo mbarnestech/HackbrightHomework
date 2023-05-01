@@ -62,8 +62,7 @@ class MarineFoodChainGraph:
         False
 
         """
-        # TODO: Complete this method
-        pass
+        return animal1 in animal2.prey
 
 
 #####################################################################
